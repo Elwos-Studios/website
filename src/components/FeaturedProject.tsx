@@ -1,12 +1,14 @@
-import { Link } from 'react-router-dom'
+import Btn from './Btn'
 
 export default function FeaturedProject({ showLink = true }: { showLink?: boolean }) {
   return (
     <div className="card">
       <div className="art">
-        Artwork &amp; screenshots
-        <br />
-        coming soon
+        <span>
+          Artwork &amp; screenshots
+          <br />
+          coming soon
+        </span>
       </div>
       <div className="body">
         <span className="tag">In development</span>
@@ -17,9 +19,9 @@ export default function FeaturedProject({ showLink = true }: { showLink?: boolea
         </p>
         {showLink && (
           <p>
-            <Link className="btn alt" to="/games" style={{ marginTop: '1rem' }}>
+            <Btn to="/games" alt arrow style={{ marginTop: '1rem' }}>
               View project
-            </Link>
+            </Btn>
           </p>
         )}
       </div>

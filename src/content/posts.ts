@@ -1,5 +1,5 @@
 export interface Post {
-  date: string
+  date: string // ISO date, e.g. 2026-11-13
   title: string
   body: string
 }

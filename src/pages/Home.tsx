@@ -1,4 +1,7 @@
-import { Link } from 'react-router-dom'
+import type { CSSProperties } from 'react'
+import Btn from '../components/Btn'
+import Embers from '../components/Embers'
+import Marquee from '../components/Marquee'
 import Strata from '../components/Strata'
 import FeaturedProject from '../components/FeaturedProject'
 import { usePageMeta } from '../components/usePageMeta'
@@ -11,22 +14,22 @@ export default function Home() {
   return (
     <>
       <div className="hero">
+        <Embers />
         <div className="wrap">
           <p className="eyebrow">Independent game studio</p>
           <h1>
-            We create worlds
-            <br />
-            people want to
-            <br />
-            belong to.
+            <span className="line" style={{ '--i': 0 } as CSSProperties}>We create worlds</span>
+            <span className="line" style={{ '--i': 1 } as CSSProperties}>people want to</span>
+            <span className="line" style={{ '--i': 2 } as CSSProperties}>belong to.</span>
           </h1>
           <p className="lede">
             ELWOS Studios builds games with identity, atmosphere and communities worth being part of.
           </p>
-          <Link className="btn" to="/games">Our game</Link> <Link className="btn alt" to="/about">About the studio</Link>
+          <div className="cta"><Btn to="/games" arrow>Our game</Btn> <Btn to="/about" alt>About the studio</Btn></div>
         </div>
         <Strata />
       </div>
+      <Marquee />
       <section>
         <div className="wrap split">
           <div>
@@ -57,7 +60,7 @@ export default function Home() {
           <p className="lede" style={{ margin: '1rem 0 1.8rem' }}>
             Two founders, one ambition: build something players genuinely love.
           </p>
-          <Link className="btn" to="/about">Meet the studio</Link>
+          <Btn to="/about" arrow>Meet the studio</Btn>
         </div>
       </section>
     </>
