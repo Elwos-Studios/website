@@ -1,56 +1,35 @@
-# ELWOS Studios Website
+# ELWOS Studios — Website
 
-Official website for ELWOS Studios.
-
-This repository contains the studio's public-facing website. It is separate from the private studio handbook and game source repositories.
-
-## Stack
-
-- Vite
-- React
-- TypeScript
-- CSS
+Official website for ELWOS Studios, an independent game studio.
+Built with **Vite + React + TypeScript** and React Router.
 
 ## Requirements
+- Node.js 18 or newer (20+ recommended)
 
-- Node.js LTS
-- npm
-
-## Local development
-
+## Getting started
 ```bash
 npm install
 npm run dev
-```
-
-## Validation
-
-```bash
-npm run typecheck
 npm run build
 npm run preview
 ```
 
 ## Project structure
-
-```text
-public/                  Static public assets
+```
+public/
 src/
-  assets/                Imported images, fonts and bundled assets
-  components/            Shared UI components
-  content/               Editable site content and data
-  layouts/               Shared page layouts
-  pages/                  Route-level page components
-  styles/                 Global styles, tokens and utilities
-  App.tsx                 Application shell and routes
-  main.tsx                Application entry point
-index.html                HTML document and SEO defaults
+  assets/
+  components/
+  content/
+  layouts/
+  pages/
+  styles/
 ```
 
-## Content accuracy
-
-Do not publish invented studio history, founder biographies, game titles, release dates, awards, player counts, partnerships, testimonials, email addresses or social links. Keep unconfirmed details clearly marked for the studio to supply.
+## Editing content
+- Add news posts at the top of `src/content/posts.ts`.
+- Founder and contact placeholders are in `src/pages/About.tsx` and `src/pages/Contact.tsx`.
+- Brand colours are CSS variables in `src/styles/global.css`.
 
 ## Deployment
-
-The intended deployment target is Vercel, connected to this GitHub repository. Production deployments should follow the `main` branch after review.
+Build output is `dist/`. Configure the host to run `npm run build` and publish `dist`. The included `public/_redirects` supports SPA routing on Cloudflare Pages and Netlify.
